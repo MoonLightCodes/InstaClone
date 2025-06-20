@@ -12,7 +12,9 @@ const Home = () => {
   const { user } = useAuthContext();
   const { data, refetch, loading, fetchFailed, handleFetch } = usePostContext();
   useEffect(()=>{},[data])
-
+ useEffect(() => {
+    window.screenTop = 0;
+  }, []);
   return (
     <div className=" bg-transparent backdrop-blur-3xl ">
       <h1 className="bg-gradient-to-r font-extrabold tracking-widest text-center text-3xl text-transparent bg-clip-text from-purple-300 via-violet-400 to-purple-800">

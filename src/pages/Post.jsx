@@ -18,6 +18,9 @@ const Post = () => {
   const [fetchFailed, setfetchFailed] = useState(false);
   const { userId } = useAuthContext();
   const dispatch = useDispatch();
+   useEffect(() => {
+      window.screenTop = 0;
+    }, []);
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };

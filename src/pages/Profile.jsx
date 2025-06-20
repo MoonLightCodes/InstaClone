@@ -14,7 +14,9 @@ const Profile = () => {
   const profilesOThers = useMemo(() => {
     return [...new Set(data.map((e) => e.user))];
   }, [data]);
-
+  useEffect(() => {
+    window.screenTop = 0;
+  }, []);
   const [sendingData, setSendingData] = useState([]);
 
   useEffect(() => {
@@ -32,7 +34,7 @@ const Profile = () => {
       isMounted = false;
     };
   }, [profilesOThers]);
-  console.log(data," data");
+  console.log(data, " data");
 
   // useEffect(() => {
   //   console.log("profile user", profilesOThers);
