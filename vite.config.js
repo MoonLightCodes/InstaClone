@@ -8,6 +8,7 @@ export default defineConfig({
   preview: {
     host: true,
     port: 5173, // or whatever port you're using
-    allowedHosts: ["instaclone-nd04.onrender.com"],
+    allowedHosts: true
+    // ["instaclone-nd04.onrender.com"],
   },
 });
