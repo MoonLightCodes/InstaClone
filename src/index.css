@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+body {
+    background: linear-gradient(135deg, #d1c4e9 25%, #9575cd 25%, #9575cd 50%, #d1c4e9 50%, #d1c4e9 75%, #9575cd 75%, #9575cd 100%);
+    background-size: 50px 50px;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 10%, transparent 10%), 
+                radial-gradient(circle, rgba(255,255,255,0.3) 10%, transparent 10%);
+    background-size: 50px 50px;
+    background-position: 25px 25px, 0 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.noScroll {
+    scrollbar-width: none; /* Hides scrollbar for Firefox */
+    -webkit-scrollbar: none; /* Fixes property name for WebKit browsers */
+    overflow: auto;
+    user-select: none;
+}
+*{
+    cursor: url('./assets/cursor.png'), auto;
+}
