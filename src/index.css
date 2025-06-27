@@ -4,6 +4,7 @@ body {
     background: linear-gradient(135deg, #d1c4e9 25%, #9575cd 25%, #9575cd 50%, #d1c4e9 50%, #d1c4e9 75%, #9575cd 75%, #9575cd 100%);
     background-size: 50px 50px;
     position: relative;
+    cursor: url('./assets/cursor.png'), auto;
 }
 
 body::before {

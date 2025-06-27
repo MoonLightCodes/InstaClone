@@ -26,8 +26,8 @@ const ProtectedRoute = ({ children, isPublic = false }) => {
             </div>
             <span className="animate-bounce text-purple-900 text-3xl">🎉</span>
           </div>
-          <div className="mt-20 w-full">
-            {children}
+          <div className="mt-10 w-full ">
+            {children}  
           </div>
         </div>
       </div>

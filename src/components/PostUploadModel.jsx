@@ -64,6 +64,7 @@ const PostUpladModel = ({ onClose }) => {
     } finally {
       dispatch(setCaption(""));
       dispatch(setPost(null));
+      dispatch(setPreview(""));
       setLoading(false);
       isUpdate &&
         (dispatch(toggleIsUpdate(false)),
