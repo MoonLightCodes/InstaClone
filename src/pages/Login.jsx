@@ -52,9 +52,9 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700">
-      <h1 className="text-4xl font-extrabold text-white mb-6">Welcome Back!</h1>
-      <form className="bg-white p-8 rounded-lg shadow-lg md:w-96  w-full sm:w-96">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 px-4">
+      <h1 className="text-3xl sm:text-4xl font-extrabold text-white mb-6 text-center">Welcome Back!</h1>
+      <form className="bg-white p-6 sm:p-8 rounded-lg shadow-lg w-full max-w-xs sm:max-w-md md:max-w-md">
         <div className="mb-6">
           <label
             className="block text-sm font-medium text-gray-700 mb-2"
@@ -90,7 +90,7 @@ const Login = () => {
         </div>
         <button
           type="submit"
-          className="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition duration-200 font-semibold"
+          className="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition duration-200 font-semibold flex items-center justify-center"
           onClick={handleSubmit}
         >
           Login{" "}
@@ -101,9 +101,12 @@ const Login = () => {
         {error && (
           <p className="text-red-500 text-sm mt-4 text-center">{error}</p>
         )}
-      <div className=" mt-6">
-        New user ! {" "}<Link to="/register" className="text-purple-500">Sign-up</Link>
-      </div>
+        <div className="mt-6 text-center">
+          New user ?{"  "}
+          <Link to="/register" className="text-purple-500 hover:underline">
+            Sign-up
+          </Link>
+        </div>
       </form>
     </div>
   );

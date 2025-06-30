@@ -21,9 +21,11 @@ const ProtectedRoute = ({ children, isPublic = false }) => {
   return (
     <div className="min-h-screen bg-slate-100 flex flex-col">
       {/* Header */}
-      <header className="bg-gradient-to-r from-purple-200 via-purple-300 to-purple-400 
+      <header
+        className="bg-gradient-to-r from-purple-200 via-purple-300 to-purple-400 
                          flex items-center justify-between p-4 
-                         fixed top-0 left-0 right-0 z-50 h-16">
+                         fixed top-0 left-0 right-0 z-50 h-16"
+      >
         <button
           onClick={() => setIsNavCollapsed(!isNavCollapsed)}
           className="md:hidden text-purple-900 text-2xl"
@@ -31,23 +33,25 @@ const ProtectedRoute = ({ children, isPublic = false }) => {
           {isNavCollapsed ? <FiX /> : <FiMenu />}
         </button>
         <div className="flex items-center gap-4">
-          <div className="bg-gradient-to-tr from-purple-900 via-purple-500 to-purple-600 
-                        text-transparent bg-clip-text animate-pulse font-bold">
+          <div
+            className="bg-gradient-to-tr from-purple-900 via-purple-500 to-purple-600 
+                        text-transparent bg-clip-text animate-pulse font-bold"
+          >
             {`Hi ${user}`}
           </div>
-        <span className="relative w-8 h-8 overflow-hidden text-2xl">
-  <span className="absolute top-0 left-0 w-full h-full emoji-swap text-purple-900 flex flex-col items-center">
-    <span>🎉</span>
-    <span>❤️</span>
-    <span>😂</span>
-    <span>📸</span>
-    <span>💬</span>
-    <span>👍</span>
-  </span>
+          <span className="relative w-8 h-8 overflow-hidden text-2xl">
+            <span className="absolute top-0 left-0 w-full h-full emoji-swap text-purple-900 flex flex-col items-center">
+              <span>🎉</span>
+              <span>❤️</span>
+              <span>😂</span>
+              <span>📸</span>
+              <span>💬</span>
+              <span>👍</span>
+            </span>
 
-  {/* CSS below */}
-  <style>
-    {`
+            {/* CSS below */}
+            <style>
+              {`
       @keyframes emojiSwap {
         0%, 10% { transform: translateY(0%); }
         15%, 25% { transform: translateY(-100%); }
@@ -61,9 +65,8 @@ const ProtectedRoute = ({ children, isPublic = false }) => {
         animation: emojiSwap 6s ease-in-out infinite;
       }
     `}
-  </style>
-</span>
-
+            </style>
+          </span>
         </div>
       </header>
 
@@ -72,7 +75,11 @@ const ProtectedRoute = ({ children, isPublic = false }) => {
         {/* Sidebar */}
         <div
           className={`fixed md:relative z-40 transition-transform duration-300 
-                      ${isNavCollapsed ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+                      ${
+                        isNavCollapsed
+                          ? "translate-x-0"
+                          : "-translate-x-full md:translate-x-0"
+                      }
                       h-full`}
         >
           <div
@@ -86,7 +93,9 @@ const ProtectedRoute = ({ children, isPublic = false }) => {
         {/* Main Content */}
         <main
           className={`flex-1 overflow-auto p-4 transition-all duration-300
-                     ${isNavCollapsed ? 'ml-0' : 'md:ml-16 md:group-hover:ml-64'}
+                     ${
+                       isNavCollapsed ? "ml-0" : "md:ml-16 md:group-hover:ml-64"
+                     }
                      min-h-[calc(100vh-4rem)]`}
         >
           {children}
