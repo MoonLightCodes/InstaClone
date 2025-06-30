@@ -60,17 +60,17 @@ const CommentsModal = ({ postid, setCommentsVisible }) => {
   }
 
   return (
-    <div className=" max-h-[70vh] overflow-y-auto noScroll m-4 border p-4 rounded-2xl w-[35rem] bg-white mx-auto -translate-x-1/12">
+    <div className="max-h-[70vh] overflow-y-auto noScroll m-2 sm:m-4 border p-2 sm:p-4 rounded-2xl w-full max-w-lg bg-white mx-auto sm:-translate-x-1/12 shadow-lg">
       <div className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl font-semibold text-gray-800">Comments</h1>
+        <h1 className="text-xl sm:text-2xl font-semibold text-purple-800">Comments</h1>
         <FcUndo
-          className="cursor-pointer text-3xl hover:bg-gray-300 rounded-full transition-all duration-200"
+          className="cursor-pointer text-2xl sm:text-3xl hover:bg-purple-100 rounded-full transition-all duration-200"
           onClick={() => setCommentsVisible(null)}
         />
       </div>
       {loading ? (
         <div className="flex justify-center items-center">
-          <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+          <div className="w-8 h-8 border-4 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
         </div>
       ) : (
         <div className="space-y-4">
@@ -81,17 +81,17 @@ const CommentsModal = ({ postid, setCommentsVisible }) => {
               <CommentCard key={index} data={e} setRerender={setRerender} />
             ))
           ) : (
-            <h1 className="text-center text-gray-500">No Comments Yet</h1>
+            <h1 className="text-center text-purple-400">No Comments Yet</h1>
           )}
         </div>
       )}
       <form
-        className="flex items-center mt-4 border rounded-lg shadow-sm"
+        className="flex items-center mt-4 border rounded-lg shadow-sm bg-purple-50"
         onSubmit={handleAddComment}
       >
         <input
           type="text"
-          className="flex-1 px-4 py-2 focus:outline-none rounded-l-lg"
+          className="flex-1 px-3 sm:px-4 py-2 focus:outline-none rounded-l-lg bg-white text-purple-900 placeholder-purple-300"
           placeholder="Enter a comment..."
           ref={addCommentSection}
           onChange={(e) => setAddComment(e.target.value)}
@@ -99,9 +99,9 @@ const CommentsModal = ({ postid, setCommentsVisible }) => {
         />
         <button
           type="submit"
-          className="px-4 flex justify-center items-center gap-2 py-2 bg-blue-500 text-white rounded-r-lg hover:bg-blue-600 transition-colors"
+          className="px-3 sm:px-4 flex justify-center items-center gap-2 py-2 bg-purple-600 text-white rounded-r-lg hover:bg-purple-700 transition-colors"
         >
-          Post {loadingPost && <span className="w-4 h-4 border-2 ml-2  border-r-transparent rounded-full animate-spin  "></span>}
+          Post {loadingPost && <span className="w-4 h-4 border-2 ml-2 border-purple-200 border-r-transparent rounded-full animate-spin"></span>}
         </button>
       </form>
     </div>
