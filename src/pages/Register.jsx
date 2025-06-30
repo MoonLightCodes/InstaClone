@@ -3,10 +3,11 @@ import { useRegister } from "../service/userAuth";
 import { toast } from "react-toastify";
 import { useAuthContext } from "../context/AuthContext";
 import { setToken } from "../utils/setToken";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const { setUser } = useAuthContext();
+  const navigate = useNavigate();
   const initForm = {
     name: "",
     email: "",
@@ -48,6 +49,7 @@ const Register = () => {
         username: res?.data?.data?.username,
       });
       setToken(res?.data?.data?.token);
+      navigate("/login")
     } catch (e) {
       console.log(e);
       setLoading(false);

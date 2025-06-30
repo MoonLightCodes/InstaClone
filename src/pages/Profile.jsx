@@ -90,14 +90,14 @@ const Profile = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-4 bg-gradient-to-br from-purple-100 via-purple-50 to-white min-h-screen rounded-2xl shadow-xl">
-      <div className="flex items-center space-x-6 bg-purple-50 rounded-xl p-6 shadow-md mb-6 border-2 border-purple-200">
+      <div className="flex md:flex-row md:text-2xl flex-col text-md items-center space-x-6 bg-purple-50 rounded-xl p-6 shadow-md mb-6 border-2 border-purple-200">
         <img
           src="https://imgs.search.brave.com/cS-h-NqRdm6boRw8bddIQKM6xFFT2lW-Jm-OpHvUknY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS12ZWN0b3Iv/dXNlci1jaXJjbGVz/LXNldF83ODM3MC00/NzA0LmpwZz9zZW10/PWFpc19pdGVtc19i/b29zdGVkJnc9NzQw"
           alt="Profile"
           className="w-32 h-32 rounded-full object-cover border-4 border-purple-400 shadow-lg"
         />
         <div>
-          <h1 className="text-3xl font-extrabold text-purple-700">{curUserInfo.user.name}</h1>
+          <h1 className="text-3xl text-center font-extrabold text-purple-700">{curUserInfo.user.name}</h1>
           <p className="text-purple-500">{curUserInfo.message}</p>
         </div>
       </div>

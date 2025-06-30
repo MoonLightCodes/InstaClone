@@ -54,7 +54,7 @@ const Login = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700">
       <h1 className="text-4xl font-extrabold text-white mb-6">Welcome Back!</h1>
-      <form className="bg-white p-8 rounded-lg shadow-lg w-96">
+      <form className="bg-white p-8 rounded-lg shadow-lg md:w-96  w-full sm:w-96">
         <div className="mb-6">
           <label
             className="block text-sm font-medium text-gray-700 mb-2"
