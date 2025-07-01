@@ -134,7 +134,7 @@ const PostCard = ({ data, openModel }) => {
         <img
           src={data.image}
           alt="post"
-          className="w-full h-full object-cover border-t border-b border-purple-300"
+          className="w-full h-full object-contain border-t border-b border-purple-300"
         />
       </div>
 
