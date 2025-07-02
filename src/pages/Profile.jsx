@@ -131,7 +131,7 @@ const Profile = () => {
             }}
           >
             <img
-              src={`https://imgs.search.brave.com/cS-h-NqRdm6boRw8bddIQKM6xFFT2lW-Jm-OpHvUknY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS12ZWN0b3Iv/dXNlci1jaXJjbGVz/LXNldF83ODM3MC00/NzA0LmpwZz9zZW10/PWFpc19pdGVtc19i/b29zdGVkJnc9NzQw`}
+              src={profilePic}
               alt={`Post `}
               className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-cover rounded-full border-4 border-purple-300 shadow-md group-hover:border-purple-500 transition-all duration-300"
             />
