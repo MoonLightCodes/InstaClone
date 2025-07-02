@@ -3,11 +3,13 @@ import { data, useLocation, useParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import { usePostContext } from "../context/AllPostsContext";
 import PostCard from "../components/PostCard";
+import profilePic from "../assets/profile.webp"
 
 const IndividualProfile = () => {
   const { id } = useParams();
   const { state } = useLocation();
   const { data } = usePostContext();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -16,7 +18,7 @@ const IndividualProfile = () => {
     <div className="max-w-4xl mx-auto p-4 bg-gradient-to-br from-purple-100 via-purple-200 to-purple-300 min-h-screen">
       <div className="flex flex-col md:flex-row items-center space-x-6 bg-gradient-to-r from-purple-400 via-violet-500 to-purple-700 p-4 rounded-lg shadow-lg">
         <img
-          src="https://imgs.search.brave.com/cS-h-NqRdm6boRw8bddIQKM6xFFT2lW-Jm-OpHvUknY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS12ZWN0b3Iv/dXNlci1jaXJjbGVz/LXNldF83ODM3MC00/NzA0LmpwZz9zZW10/PWFpc19pdGVtc19i/b29zdGVkJnc9NzQw"
+          src={profilePic}
           alt="Profile"
           className="w-32 h-32 rounded-full object-cover border-4 border-purple-600 shadow-xl"
         />
