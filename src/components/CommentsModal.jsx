@@ -60,7 +60,7 @@ const CommentsModal = ({ postid, setCommentsVisible }) => {
   }
 
   return (
-    <div className="max-h-[70vh] overflow-y-auto noScroll m-2 sm:m-4 border p-2 sm:p-4 rounded-2xl w-full max-w-lg bg-white mx-auto sm:-translate-x-1/12 shadow-lg">
+    <div className="max-h-[70vh] overflow-y-auto noScroll m-2 md:ml-11 sm:m-4 border p-2 sm:p-4 rounded-2xl w-full max-w-lg bg-white mx-auto sm:-translate-x-1/12 shadow-lg">
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-xl sm:text-2xl font-semibold text-purple-800">Comments</h1>
         <FcUndo

@@ -20,7 +20,6 @@ const ProtectedRoute = ({ children, isPublic = false }) => {
 
   return (
     <div className="min-h-screen bg-slate-100 flex flex-col">
-      {/* Header */}
       <header
         className="bg-gradient-to-r from-purple-200 via-purple-300 to-purple-400 
                          flex items-center justify-between p-4 
@@ -49,7 +48,6 @@ const ProtectedRoute = ({ children, isPublic = false }) => {
               <span>👍</span>
             </span>
 
-            {/* CSS below */}
             <style>
               {`
       @keyframes emojiSwap {
@@ -70,9 +68,7 @@ const ProtectedRoute = ({ children, isPublic = false }) => {
         </div>
       </header>
 
-      {/* Layout */}
       <div className="flex flex-1 pt-16">
-        {/* Sidebar */}
         <div
           className={`fixed md:relative z-40 transition-transform duration-300 
                       ${
@@ -90,7 +86,6 @@ const ProtectedRoute = ({ children, isPublic = false }) => {
           </div>
         </div>
 
-        {/* Main Content */}
         <main
           className={`flex-1 overflow-auto p-4 transition-all duration-300
                      ${

@@ -36,6 +36,8 @@ const Login = () => {
     console.log("setuser ", res);
     setUser(res.user);
     let b = await getCurrentUserInfo(getToken());
+    localStorage.setItem("userId", b?.data?.data?.user?._id);
+    localStorage.setItem("userInfo", JSON.stringify(b?.data?.data));
     setUserId(b?.data?.data?.user?._id)
     setCurUserInfo(b?.data?.data);
     console.log("current user info",b?.data?.data)

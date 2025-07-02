@@ -23,8 +23,8 @@ body::before {
 }
 
 .noScroll {
-    scrollbar-width: none; /* Hides scrollbar for Firefox */
-    -webkit-scrollbar: none; /* Fixes property name for WebKit browsers */
+    scrollbar-width: none; 
+    -webkit-scrollbar: none; 
     overflow: auto;
     user-select: none;
 }
