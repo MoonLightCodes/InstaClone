@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaHeart, FaRegHeart, FaRegComment, FaEdit } from "react-icons/fa";
 import { FaTrashCan } from "react-icons/fa6";
 import { getToken } from "../utils/getToken";
@@ -11,6 +11,7 @@ import { usePostContext } from "../context/AllPostsContext";
 import { useDispatch } from "react-redux";
 import { handleEditThunk } from "../redux/postUploadSlice";
 import js from "@eslint/js";
+import { useDoubleTap } from "use-double-tap";
 
 const PostCard = React.memo(({ data, openModel }) => {
   const [postUserData, setPostUserData] = useState(null);
@@ -21,6 +22,7 @@ const PostCard = React.memo(({ data, openModel }) => {
   const [loading, setLoading] = useState(false);
   const { setrefetch } = usePostContext();
   const dispatch = useDispatch();
+  const ref = useRef();
 
   async function getUser() {
     var a = await getUserDetails(data.user, getToken());
@@ -68,7 +70,9 @@ const PostCard = React.memo(({ data, openModel }) => {
       setrefetch((p) => !p);
     }
   }
-
+  const bind = useDoubleTap(() => {
+    handleLike();
+  });
   function formatTimeAgo(dateString) {
     const now = new Date();
     const postDate = new Date(dateString);
@@ -130,6 +134,8 @@ const PostCard = React.memo(({ data, openModel }) => {
       </div>
 
       <div
+        {...bind}
+        ref={ref}
         className="w-full aspect-[4/2.5] bg-purple-200 my-2 p-2 sm:p-4 rounded-lg overflow-hidden"
         onDoubleClick={handleLike}
       >
