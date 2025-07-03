@@ -33,8 +33,7 @@ const IndividualProfile = () => {
           Posts
         </h1>
         <div className="grid gap-6">
-          {data
-            .filter((e) => e?.user === id)
+          {data?.filter((e) => e?.user === id)
             .map((e, i) => (
               <div key={i} className="rounded-lg bg-gradient-to-r from-purple-200 via-purple-100 to-purple-300 p-1 shadow-md">
                 <PostCard data={e} />
