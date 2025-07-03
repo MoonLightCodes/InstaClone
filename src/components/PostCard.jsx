@@ -129,7 +129,10 @@ const PostCard = React.memo(({ data, openModel }) => {
         )}
       </div>
 
-      <div className="w-full aspect-[4/2.5] bg-purple-200 my-2 p-2 sm:p-4 rounded-lg overflow-hidden">
+      <div
+        className="w-full aspect-[4/2.5] bg-purple-200 my-2 p-2 sm:p-4 rounded-lg overflow-hidden"
+        onDoubleClick={handleLike}
+      >
         <img
           src={data.image}
           alt="post"
