@@ -11,7 +11,6 @@ import NetworkError from "../components/NetworkError";
 const Home = () => {
   const { user } = useAuthContext();
   const { data, refetch, loading, fetchFailed, handleFetch } = usePostContext();
-  useEffect(()=>{},[data])
  useEffect(() => {
     window.screenTop = 0;
   }, []);

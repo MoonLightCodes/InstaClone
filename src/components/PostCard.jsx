@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  FaHeart,
-  FaRegHeart,
-  FaRegComment,
-  FaEdit,
-} from "react-icons/fa";
+import { FaHeart, FaRegHeart, FaRegComment, FaEdit } from "react-icons/fa";
 import { FaTrashCan } from "react-icons/fa6";
 import { getToken } from "../utils/getToken";
 import { getUserDetails } from "../service/userServices";
@@ -15,8 +10,9 @@ import { toast } from "react-toastify";
 import { usePostContext } from "../context/AllPostsContext";
 import { useDispatch } from "react-redux";
 import { handleEditThunk } from "../redux/postUploadSlice";
+import js from "@eslint/js";
 
-const PostCard = ({ data, openModel }) => {
+const PostCard = React.memo(({ data, openModel }) => {
   const [postUserData, setPostUserData] = useState(null);
   const [isLiked, setIsliked] = useState(null);
   const [isCommentsOpen, ssetIsCommentsOpen] = useState(null);
@@ -27,8 +23,8 @@ const PostCard = ({ data, openModel }) => {
   const dispatch = useDispatch();
 
   async function getUser() {
-    let a = await getUserDetails(data.user, getToken());
-    setPostUserData(a.data.data);
+    var a = await getUserDetails(data.user, getToken());
+    setPostUserData(a.data.data); //Json.parse(localStorage.getItem("postFormatData"))
     setIsliked(data.likes.some((e) => e === userId));
   }
 
@@ -114,7 +110,10 @@ const PostCard = ({ data, openModel }) => {
                 <button
                   onClick={() =>
                     window.location.pathname.includes("/post") &&
-                    (openModel(), dispatch(handleEditThunk(data?.image, data?.text, data?._id)))
+                    (openModel(),
+                    dispatch(
+                      handleEditThunk(data?.image, data?.text, data?._id)
+                    ))
                   }
                   className="flex items-center w-full px-3 py-2 text-sm text-blue-500 hover:bg-blue-50"
                 >
@@ -179,6 +178,6 @@ const PostCard = ({ data, openModel }) => {
       )}
     </div>
   );
-};
+});
 
 export default PostCard;
