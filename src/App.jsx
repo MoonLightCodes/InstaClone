@@ -4,25 +4,38 @@ import Login from "./pages/Login";
 import ProtectedRoute from "./hoc/ProtectedRoute";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
-import { ToastContainer } from "react-toastify";
+import { Bounce, ToastContainer } from "react-toastify";
 import MagicMouse from "./components/MagicMouse";
 import Post from "./pages/Post";
 import Profile from "./pages/Profile";
 import IndividualProfile from "./pages/IndividualProfile";
 
 const App = () => {
- 
   // Lazy load pages
   const Login = React.lazy(() => import("./pages/Login"));
   const Home = React.lazy(() => import("./pages/Home"));
   const Register = React.lazy(() => import("./pages/Register"));
   const Post = React.lazy(() => import("./pages/Post"));
   const Profile = React.lazy(() => import("./pages/Profile"));
-  const IndividualProfile = React.lazy(() => import("./pages/IndividualProfile"));
+  const IndividualProfile = React.lazy(() =>
+    import("./pages/IndividualProfile")
+  );
 
   return (
     <div className="noScroll">
-      <ToastContainer />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover={false}
+        theme="light"
+        transition={Bounce}
+      />
       <MagicMouse />
       <React.Suspense
         fallback={

@@ -63,7 +63,7 @@ const AllPostsContext = ({ children }) => {
         localStorage.setItem("postFormatData", JSON.stringify(rt));
       })
       .catch((e) => {
-        
+        toast.error("Failed to fetch user details for posts");
       });
   }, [data]);
 
