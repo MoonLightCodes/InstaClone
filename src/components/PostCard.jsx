@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux";
 import { handleEditThunk } from "../redux/postUploadSlice";
 import js from "@eslint/js";
 import { useDoubleTap } from "use-double-tap";
+import { useNavigate } from "react-router-dom";
 
 const PostCard = React.memo(({ data, openModel }) => {
   const [postUserData, setPostUserData] = useState(null);
@@ -23,6 +24,7 @@ const PostCard = React.memo(({ data, openModel }) => {
   const { setrefetch } = usePostContext();
   const dispatch = useDispatch();
   const ref = useRef();
+  const navigate = useNavigate();
 
   async function getUser() {
     var a = await getUserDetails(data.user, getToken());
@@ -87,7 +89,17 @@ const PostCard = React.memo(({ data, openModel }) => {
 
   return (
     <div className="max-w-full sm:max-w-lg mx-auto border mt-5 border-purple-200 rounded-lg bg-gradient-to-br from-purple-100 to-purple-300 shadow-lg text-gray-800 font-sans">
-      <div className="flex items-center p-4 relative">
+      <div
+        className="flex items-center p-4 relative"
+        onClick={() => {
+          navigate(`/indi-profile/${data?.user}`, {
+            state: {
+              name: postUserData?.name,
+              id: data?.user,
+            },
+          });
+        }}
+      >
         <div className="w-8 h-8 rounded-full text-purple-700 bg-white flex items-center justify-center font-bold">
           {postUserData?.name?.toUpperCase()[0]}
         </div>
