@@ -47,25 +47,25 @@ const AllPostsContext = ({ children }) => {
       clearInterval(a);
     };
   }, [refetch]);
-  useEffect(() => {
+  // useEffect(() => {
     
-    Promise.all(data?.map((e) => getUserDetails(e.user, getToken())))
-      .then((res) => {
-        // console.log(res,"post context userder details ")
-        const rt = res.reduce(
-          (acc, curr) => ({
-            ...acc,
-            [curr.data.data._id]: curr.data.data,
-          }),
-          {}
-        );
+  //   Promise.all(data?.map((e) => getUserDetails(e.user, getToken())))
+  //     .then((res) => {
+  //       // console.log(res,"post context userder details ")
+  //       const rt = res.reduce(
+  //         (acc, curr) => ({
+  //           ...acc,
+  //           [curr.data.data._id]: curr.data.data,
+  //         }),
+  //         {}
+  //       );
         
-        localStorage.setItem("postFormatData", JSON.stringify(rt));
-      })
-      .catch((e) => {
-        toast.error("Failed to fetch user details for posts");
-      });
-  }, [data]);
+  //       localStorage.setItem("postFormatData", JSON.stringify(rt));
+  //     })
+  //     .catch((e) => {
+  //       toast.error("Failed to fetch user details for posts");
+  //     });
+  // }, [data]);
 
   return (
     <PostContext.Provider

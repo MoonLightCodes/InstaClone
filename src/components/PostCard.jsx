@@ -89,21 +89,23 @@ const PostCard = React.memo(({ data, openModel }) => {
 
   return (
     <div className="max-w-full sm:max-w-lg mx-auto border mt-5 border-purple-200 rounded-lg bg-gradient-to-br from-purple-100 to-purple-300 shadow-lg text-gray-800 font-sans">
-      <div
-        className="flex items-center p-4 relative"
-        onClick={() => {
-          navigate(`/indi-profile/${data?.user}`, {
-            state: {
-              name: postUserData?.name,
-              id: data?.user,
-            },
-          });
-        }}
-      >
+      <div className="flex items-center p-4 relative">
         <div className="w-8 h-8 rounded-full text-purple-700 bg-white flex items-center justify-center font-bold">
           {postUserData?.name?.toUpperCase()[0]}
         </div>
-        <span className="font-semibold ml-3">{postUserData?.name}</span>
+        <span
+          className="font-semibold ml-3"
+          onClick={() => {
+            navigate(`/indi-profile/${data?.user}`, {
+              state: {
+                name: postUserData?.name,
+                id: data?.user,
+              },
+            });
+          }}
+        >
+          {postUserData?.name}
+        </span>
 
         {postUserData?.name === user && (
           <div
